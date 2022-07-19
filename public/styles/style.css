@@ -1,3 +1,82 @@
+.body-header-image {
+  background-attachment: fixed;
+  background-size: cover;
+}
 
+.image-default {
+  background-image: url("../picture/PictureSimple.jpg");
+}
+
+.header-menu {
+  display: flex;
+  background-color: #4292EE;
+  align-items: center;
+  width: 60%;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  margin: auto;
+  color: white;
+  margin-top: 50px;
+  font-size: 1.2rem;
+}
+
+.header-menu-company {
+  display: flex;
+  color: white;
+  text-decoration: none;
+}
+
+.header-nav {
+  width: 30%;
+}
+
+.header-nav-ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.main-connection {
+  background-color: #E3EAF2;
+  display: flex;
+  margin: auto;
+  margin-top: 15vh;
+  width: 40vw;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.main-connection-button, .main-connection-title, .main-connection-password, .main-connection-username {
+  display: flex;
+  justify-content: center;
+  font-family: "Segoe UI";
+}
+
+.login-form {
+  margin: auto;
+}
+
+.main-connection-username, .main-connection-password {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.main-connection-title {
+  font-size: 1.5rem;
+}
+
+.login-button {
+  font-size: 2rem;
+  background-color: #4292EE;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.form-control {
+  font-size: 2rem;
+  width: 40%;
+}
 
 /*# sourceMappingURL=style.css.map */
