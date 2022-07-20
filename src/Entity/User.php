@@ -16,11 +16,11 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column()]
-    private ?int $id = null;
+    #[ORM\Column(type: 'integer')]
+    private $id = null;
 
-    #[ORM\Column(length: 180, unique: true)]
-    private ?string $username = null;
+    #[ORM\Column(type: 'string', length: 180, unique: true)]
+    private $username = null;
 
     #[ORM\Column]
     private array $roles = [];
@@ -28,17 +28,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      */
-    #[ORM\Column]
-    private ?string $password = null;
+    #[ORM\Column(type: 'string')]
+    private $password = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $theme = null;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $theme = "default";
 
-    #[ORM\Column(length: 255)]
-    private ?string $email = null;
+    #[ORM\Column(type: 'string', length: 255)]
+    private  $email = null;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: UserList::class, orphanRemoval: true)]
-    private Collection $userLists;
+    private $userLists;
 
     public function __construct()
     {

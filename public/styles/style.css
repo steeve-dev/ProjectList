@@ -1,3 +1,7 @@
+.main-list-display {
+  background-color: rgba(97, 148, 206, 0.8);
+}
+
 .body-header-image {
   background-attachment: fixed;
   background-size: cover;
@@ -24,10 +28,6 @@
   display: flex;
   color: white;
   text-decoration: none;
-}
-
-.header-nav {
-  width: 30%;
 }
 
 .header-nav-ul {
@@ -72,6 +72,7 @@
   color: white;
   border-radius: 10px;
   padding: 5px;
+  border: #4292EE;
 }
 
 .form-control {

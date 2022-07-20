@@ -10,18 +10,18 @@ class Task
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column()]
-    private ?int $id = null;
+    #[ORM\Column(type: 'integer')]
+    private $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $name = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $status = null;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $status = null;
 
-    #[ORM\ManyToOne(inversedBy: 'tasks')]
+    #[ORM\ManyToOne(targetEntity: UserList::class, inversedBy: 'tasks')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?UserList $userList = null;
+    private $userList = null;
 
     public function getId(): ?int
     {
@@ -52,12 +52,12 @@ class Task
         return $this;
     }
 
-    public function getUserList(): ?UserList
+    public function getUserList(): ?userList
     {
         return $this->userList;
     }
 
-    public function setUserList(?UserList $userList): self
+    public function setUserList(?userList $userList): self
     {
         $this->userList = $userList;
 

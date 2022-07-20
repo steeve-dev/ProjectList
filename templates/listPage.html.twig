@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <main>
+
+        <div
+        class="main-list-display">
+            <h1>Vos listes</h1>
+            {% for list in lists %}
+                <ul>
+                    <li>{{ list.name }}</li>
+                </ul>
+
+            {% endfor %}
+            {{ form_start(listForm) }}
+            {{ form_row(listForm.name) }}
+                <button type="submit">Nouvelle liste</button>
+            {{ form_end(listForm) }}
+
+        </div>
+
+
+        <div>
+
+
+
+        </div>
+
+    </main>
+
+
+
+{% endblock %}

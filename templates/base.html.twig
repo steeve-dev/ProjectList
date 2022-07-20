@@ -25,12 +25,16 @@
 
             <ul
             class="header-nav-ul">
-                <li>
-                    <a href="{{ path('app_login') }}">Inscription</a></li>
+
                 {% if app.user %}
-                <li>Bonjour,</li>
-                <li>Gestion de listes</li>
-                <li>Deconnexion</li>
+                    <li>Bonjour {{ app.user.username }},</li>
+                    <li><a href="{{ path('ListPage') }}">Gestion de listes</a></li>
+                    <li>
+                        <a href="{{ path('app_logout') }}">Deconnexion</a></li>
+                {% else %}
+                    <li>
+                    <a href="{{ path('app_register') }}">Inscription</a></li>
+                    <a href="{{ path('app_login') }}">Connexion</a>
                 {% endif %}
             </ul>
         </nav>
