@@ -9,7 +9,7 @@
             <h1>Vos listes</h1>
             {% for list in lists %}
                 <ul>
-                    <li>{{ list.name }}</li>
+                    <li><a href="{{ path('ListDetail', {'id': list.id}) }}">{{ list.name }}</a></li>
                 </ul>
 
             {% endfor %}
@@ -20,13 +20,13 @@
 
         </div>
 
-
         <div>
+            {% block list %}
 
+            {% endblock %}
 
 
         </div>
-
     </main>
 
 

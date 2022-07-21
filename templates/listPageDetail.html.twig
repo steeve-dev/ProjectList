@@ -1,0 +1,27 @@
+{% extends 'listPage.html.twig' %}
+
+{% block list %}
+
+    {{ form_start(taskForm) }}
+    {{ form_row(taskForm.name) }}
+        <button type="submit">Nouvelle tache</button>
+    {{ form_end(taskForm) }}
+
+    <div>
+
+        {% for task in tasks.tasks %}
+            <ul>
+                <li>{{ task.name }}</li>
+            </ul>
+
+        {% endfor %}
+
+
+
+
+    </div>
+
+
+
+
+{% endblock %}
