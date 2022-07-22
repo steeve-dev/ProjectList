@@ -2,24 +2,25 @@
 
 {% block list %}
 
-    {{ form_start(taskForm) }}
-    {{ form_row(taskForm.name) }}
-        <button type="submit">Nouvelle tache</button>
-    {{ form_end(taskForm) }}
 
     <div>
-
+        <h2>{{ tasks.name }}</h2>
         {% for task in tasks.tasks %}
             <ul>
-                <li>{{ task.name }}</li>
+                <li>
+                    {{ task.name }} ( {{ task.status }} )
+                    <a href="{{ path('taskRemove', {'id': task.id}) }}">supprimer</a>
+                    <a href="{{ path('taskEdit', {'id': task.id}) }}">modifier</a>
+                </li>
             </ul>
-
         {% endfor %}
-
-
-
-
     </div>
+
+    {{ form_start(taskForm) }}
+    {{ form_row(taskForm) }}
+
+    <button type="submit">Nouvelle tache</button>
+    {{ form_end(taskForm) }}
 
 
 

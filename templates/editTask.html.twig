@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(taskForm) }}
+    {{ form_row(taskForm) }}
+    <button type="submit">valider</button>
+    {{ form_end(taskForm) }}
+
+{% endblock %}
+
+

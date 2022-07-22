@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\UserList;
 use App\Form\NewListType;
+use App\Repository\UserListRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -40,16 +41,22 @@ class ListController extends AbstractController
 
         }
 
-
-
         return $this->render('listPage.html.twig', [
             'lists'=>$userList,
             'listForm'=>$form->createView()
         ]);
-
-
-
     }
+
+        #[Route('/list/remove/{id}', name: 'listRemove')]
+        public function remove(UserListRepository $userListRepository, int $id, EntityManagerInterface $entityManager): Response
+        {
+            $list = $userListRepository->findBy(['id'=>$id])[0];
+            $entityManager->remove($list);
+            $entityManager->flush();
+
+
+            return $this->redirectToRoute('ListPage');
+        }
 
 
 }

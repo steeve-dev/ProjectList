@@ -61,7 +61,7 @@ class ListDetailController extends AbstractController
 
         if ($taskForm->isSubmitted() && $taskForm->isValid()) {
 
-            $task->setStatus('ToDo');
+
             $task->setUserList($taskDisplay);
             $entityManager->persist($task);
             $entityManager->flush();

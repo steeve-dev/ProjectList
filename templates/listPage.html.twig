@@ -7,12 +7,14 @@
         <div
         class="main-list-display">
             <h1>Vos listes</h1>
-            {% for list in lists %}
                 <ul>
-                    <li><a href="{{ path('ListDetail', {'id': list.id}) }}">{{ list.name }}</a></li>
+                    {% for list in lists %}
+                    <li><a href="{{ path('ListDetail', {'id': list.id}) }}">{{ list.name }}</a>
+                        <a href="{{ path('listRemove', {'id': list.id}) }}">supprimer</a>
+                        <a href="{{ path('listEdition', {'id': list.id}) }}">modifier</a>
+                    </li>
+                    {% endfor %}
                 </ul>
-
-            {% endfor %}
             {{ form_start(listForm) }}
             {{ form_row(listForm.name) }}
                 <button type="submit">Nouvelle liste</button>
@@ -21,8 +23,8 @@
         </div>
 
         <div>
-            {% block list %}
 
+            {% block list %}
             {% endblock %}
 
 
