@@ -12,7 +12,13 @@
         {% endblock %}
     </head>
     <body
-    class="body-header-image image-default">
+    class="body-header-image
+    {% if app.user.theme %}
+    image-desk
+    {% else %}
+    image-default
+    {% endif %}
+">
 <header>
     <div
     class="header-menu">
@@ -27,7 +33,7 @@
             class="header-nav-ul">
 
                 {% if app.user %}
-                    <li>Bonjour {{ app.user.username }},</li>
+                    <li>Bonjour <a href="{{ path('accountPage', {'id': app.user.id}) }}">{{ app.user.username }}</a></li>
                     <li><a href="{{ path('ListPage') }}">Gestion de listes</a></li>
                     <li>
                         <a href="{{ path('app_logout') }}">Deconnexion</a></li>

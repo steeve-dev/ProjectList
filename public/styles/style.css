@@ -11,6 +11,10 @@
   background-image: url("../picture/PictureSimple.jpg");
 }
 
+.image-desk {
+  background-image: url("../picture/bureauPicture.jpg");
+}
+
 .header-menu {
   display: flex;
   background-color: #4292EE;
