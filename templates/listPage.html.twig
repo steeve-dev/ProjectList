@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <main>
+
+        <div
+        class="main-list-display">
+            <h1>Vos listes</h1>
+                <ul>
+                    {% for list in lists %}
+                    <li><a href="{{ path('ListDetail', {'id': list.id}) }}">{{ list.name }}</a>
+                        <a href="{{ path('listRemove', {'id': list.id}) }}">supprimer</a>
+                        <a href="{{ path('listEdition', {'id': list.id}) }}">modifier</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            {{ form_start(listForm) }}
+            {{ form_row(listForm.name) }}
+                <button type="submit">Nouvelle liste</button>
+            {{ form_end(listForm) }}
+
+        </div>
+
+        <div>
+
+            {% block list %}
+            {% endblock %}
+
+
+        </div>
+    </main>
+
+
+
+{% endblock %}

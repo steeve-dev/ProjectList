@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\UserList;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * @extends ServiceEntityRepository<UserList>
@@ -29,6 +31,7 @@ class UserListRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
 
     public function remove(UserList $entity, bool $flush = false): void
     {

@@ -12,18 +12,19 @@ class UserList
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column()]
-    private ?int $id = null;
+    #[ORM\Column(type: 'integer')]
+    private $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    #[ORM\Column(type: 'string', length: 255)]
+    private $name = null;
 
-    #[ORM\ManyToOne(inversedBy: 'userLists')]
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'userLists')]
     #[ORM\JoinColumn(nullable: false)]
-    private ?user $user = null;
+    private $user;
+
 
     #[ORM\OneToMany(mappedBy: 'userList', targetEntity: Task::class, orphanRemoval: true)]
-    private Collection $tasks;
+    private $tasks;
 
     public function __construct()
     {
