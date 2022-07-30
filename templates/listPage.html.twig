@@ -2,33 +2,52 @@
 
 {% block body %}
 
-    <main>
+    <main
+    class="listpage-main-menu">
 
         <div
         class="main-list-display">
-            <h1>Vos listes</h1>
-                <ul>
+            <h1
+            class="body-list-title title-list">Vos listes</h1>
+                <ul
+                class="body-list-ul">
                     {% for list in lists %}
-                    <li><a href="{{ path('ListDetail', {'id': list.id}) }}">{{ list.name }}</a>
-                        <a href="{{ path('listRemove', {'id': list.id}) }}">supprimer</a>
-                        <a href="{{ path('listEdition', {'id': list.id}) }}">modifier</a>
+                    <li
+                    class="main-list-li">
+                        <a href="{{ path('ListDetail', {'id': list.id}) }}"
+                            class="body-list-a">{{ list.name }}</a>
+                        <a href="{{ path('listRemove', {'id': list.id}) }}"
+                            class="body-list-a">
+                            <img
+                                    src="{{ asset('/picture/deleteIcon.PNG') }}"
+                                    alt="Supprimer"
+                                    class="icon">
+                        </a>
+                        <a href="{{ path('listEdition', {'id': list.id}) }}">
+                            <img
+                                    src="{{ asset('/picture/updateIcon.PNG') }}"
+                                    alt="Modifier"
+                                    class="icon"
+                            ></a>
                     </li>
                     {% endfor %}
                 </ul>
-            {{ form_start(listForm) }}
-            {{ form_row(listForm.name) }}
+            <section
+            class="body-list-form">
+                {{ form_start(listForm) }}
+                {{ form_row(listForm.name) }}
                 <button type="submit">Nouvelle liste</button>
-            {{ form_end(listForm) }}
+                {{ form_end(listForm) }}
+            </section>
+
 
         </div>
 
-        <div>
 
             {% block list %}
             {% endblock %}
 
 
-        </div>
     </main>
 
 

@@ -1,3 +1,64 @@
 {% extends 'base.html.twig' %}
 
 
+{% block body %}
+<div
+class="body-home">
+    {% if app.user %}
+
+    <section
+            class="body-home-section">
+            <h2
+                    class="home-section-title">Gérer mes listes</h2>
+            <a href="{{ path('ListPage') }}"
+               class="home-section-a"
+            >Consulter, créer, supprimer ou mettez à jour vos listes !</a>
+
+    </section>
+
+    <section
+            class="body-home-section">
+
+            <h2
+                    class="home-section-title">Nouvelle liste</h2>
+            <a href="{{ path('ListPage') }}"
+               class="home-section-a"
+            >Créer une nouvelle liste !</a>
+
+    </section>
+
+    <section
+            class="body-home-section">
+
+            <h2
+                    class="home-section-title">Mon compte</h2>
+            <a href="{{ path('accountPage', {'id': app.user.id}) }}"
+               class="home-section-a"
+            >Accédez et modifier vos informations (identifiants, mail, mot de passe)</a>
+
+    </section>
+    {% else %}
+
+    <section
+            class="body-home-section">
+        <h2
+        class="home-section-title">Connexion</h2>
+        <a href="{{ path('app_login') }}"
+           class="home-section-a">Connectez vous pour accédez à votre espace et vos listes de têches</a>
+    </section>
+
+    <section
+            class="body-home-section">
+        <h2
+        class="home-section-title">Inscription</h2>
+        <a href="{{ path('app_register') }}"
+        class="home-section-a">Créez un compte pour créer vos listes de tâches</a>
+    </section>
+    {% endif %}
+
+
+</div>
+
+
+
+{% endblock %}

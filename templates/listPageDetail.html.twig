@@ -1,26 +1,44 @@
 {% extends 'listPage.html.twig' %}
 
 {% block list %}
+<div
+        class="body-list-detail">
 
-
-    <div>
-        <h2>{{ tasks.name }}</h2>
+    <h2
+            class="body-list-title title-list-detail">{{ tasks.name }}</h2>
+    <ul
+            class="body-list-ul">
         {% for task in tasks.tasks %}
-            <ul>
-                <li>
-                    {{ task.name }} ( {{ task.status }} )
-                    <a href="{{ path('taskRemove', {'id': task.id}) }}">supprimer</a>
-                    <a href="{{ path('taskEdit', {'id': task.id}) }}">modifier</a>
-                </li>
-            </ul>
+            <li
+                    class="main-list-li">
+                {{ task.name }} ( {{ task.status }} )
+                <a href="{{ path('taskRemove', {'id': task.id}) }}">
+                    <img
+                            src="{{ asset('/picture/deleteIcon.PNG') }}"
+                            alt="Supprimer"
+                            class="icon">
+                </a>
+                <a href="{{ path('taskEdit', {'id': task.id}) }}">
+                    <img
+                            src="{{ asset('/picture/updateIcon.PNG') }}"
+                            alt="Modifier"
+                            class="icon">
+                </a>
+            </li>
         {% endfor %}
-    </div>
+    </ul>
+    <section
+            class="body-list-form">
+        {{ form_start(taskForm) }}
+        {{ form_row(taskForm) }}
 
-    {{ form_start(taskForm) }}
-    {{ form_row(taskForm) }}
+        <button type="submit">Nouvelle tache</button>
+        {{ form_end(taskForm) }}
+    </section>
 
-    <button type="submit">Nouvelle tache</button>
-    {{ form_end(taskForm) }}
+</div>
+
+
 
 
 
