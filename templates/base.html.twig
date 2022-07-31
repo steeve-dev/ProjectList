@@ -12,7 +12,12 @@
         {% endblock %}
     </head>
     <body
-    class="body-header-image image-default">
+    class="body-header-image
+            {% if app.user %}
+            {{ app.user.theme }}
+            {% else %}
+            default
+            {% endif %}">
 <header>
     <div
     class="header-menu">

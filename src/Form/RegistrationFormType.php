@@ -48,7 +48,8 @@ class RegistrationFormType extends AbstractType
             ->add('theme', ChoiceType::class, [
                 'choices'=>[
                     'defaut'=>'default',
-                    'bureau'=>'desk'
+                    'bureau'=>'desk',
+                    'vague'=>'vague'
                 ]
             ])
         ;
