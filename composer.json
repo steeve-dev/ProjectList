@@ -90,9 +90,6 @@
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
-        "compile": [
-            "php bin/console doctrine:migrations:migrate"
-        ],
         "post-install-cmd": [
             "@auto-scripts"
         ],
@@ -109,4 +106,5 @@
             "require": "6.1.*"
         }
     }
+
 }
