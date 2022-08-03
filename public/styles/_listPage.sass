@@ -20,6 +20,7 @@
   border-radius: 20px
   display: flex
   flex-direction: column
+  color: #005cbf
 
 .icon
   height: 14px
@@ -52,3 +53,40 @@
 .body-list-a, .main-list-li
   text-decoration: none
   font-size: 1.2rem
+
+.list-task-button
+  @include button
+
+.list-button
+  @include button
+  color: $color1
+  background-color: white
+
+.list-button, .list-task-button
+  font-size: 1.5rem
+  margin-top: 15px
+
+
+
+// editList and editTask page
+
+.back-link
+  text-decoration: none
+  color: $color1
+
+.editList-section, .editTask-section
+  @include edit
+
+
+.editList-title, .editTask-form
+  margin: auto
+  padding: 10px
+
+.edit-button
+  @include button
+  background-color: white
+  color: $color1
+  font-size: 1.5rem
+  margin-top: 15px
+
+

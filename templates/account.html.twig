@@ -2,14 +2,23 @@
 
 {% block body %}
 
-    <h1>Mon compte</h1>
+    <section
+            class="account-body">
+        <div
+        class="register-form">
 
-    {{ form_start(form) }}
-    {{ form_row(form) }}
-    <button>Modifier</button>
-    {{ form_end(form) }}
+            <h1>Mon compte</h1>
+
+            {{ form_start(form) }}
+            {{ form_row(form) }}
+            <button
+                    class="account-form-button">Modifier</button>
+            {{ form_end(form) }}
+
+        </div>
 
 
+    </section>
 
 
 

@@ -7,7 +7,7 @@
   border-radius: 20px;
   padding: 10px;
   box-shadow: 5px 5px 15px gray;
-  font-family: "Segoe UI";
+  font-family: "Segoe UI", serif;
 }
 
 .register-form-title {
@@ -31,6 +31,10 @@
   padding: 5px;
   border: #4292EE;
   margin: auto;
+}
+
+.form-style {
+  background-color: black;
 }
 
 .listpage-main-menu {
@@ -57,6 +61,7 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  color: #005cbf;
 }
 
 .icon {
@@ -97,6 +102,67 @@
   font-size: 1.2rem;
 }
 
+.list-task-button {
+  font-size: 2rem;
+  background-color: #4292EE;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  border: #4292EE;
+}
+
+.list-button {
+  font-size: 2rem;
+  background-color: #4292EE;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  border: #4292EE;
+  color: #4292EE;
+  background-color: white;
+}
+
+.list-button, .list-task-button {
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #4292EE;
+}
+
+.editList-section, .editTask-section {
+  background-color: rgba(97, 148, 206, 0.8);
+  display: flex;
+  margin: auto;
+  margin-top: 15vh;
+  border-radius: 20px;
+  font-family: "Segoe UI", serif;
+  justify-content: space-around;
+  width: 30%;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+.editList-title, .editTask-form {
+  margin: auto;
+  padding: 10px;
+}
+
+.edit-button {
+  font-size: 2rem;
+  background-color: #4292EE;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  border: #4292EE;
+  background-color: white;
+  color: #4292EE;
+  font-size: 1.5rem;
+  margin-top: 15px;
+}
+
 .default, .desk, .vague {
   background-attachment: fixed;
   background-size: cover;
@@ -123,7 +189,7 @@
   border-radius: 10px;
   color: white;
   margin: 50px auto auto;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .header-menu-company {
@@ -137,6 +203,11 @@
   display: flex;
   justify-content: space-around;
   width: 100%;
+}
+
+.base-menu-a {
+  color: white;
+  text-decoration: none;
 }
 
 .body-home {
@@ -170,6 +241,7 @@
   margin: auto 15px;
   display: flex;
   padding: 10px;
+  color: #4292EE;
 }
 
 .main-connection {
@@ -181,7 +253,7 @@
   border-radius: 20px;
   padding: 10px;
   box-shadow: 5px 5px 15px gray;
-  font-family: "Segoe UI";
+  font-family: "Segoe UI", serif;
 }
 
 .main-connection-button, .main-connection-title, .main-connection-password, .main-connection-username {
@@ -214,6 +286,28 @@
 .form-control {
   font-size: 2rem;
   width: 40%;
+}
+
+.account-body {
+  background-color: #E3EAF2;
+  display: flex;
+  margin: auto;
+  margin-top: 15vh;
+  width: 40vw;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 5px 5px 15px gray;
+  font-family: "Segoe UI", serif;
+  flex-direction: column;
+}
+
+.account-form-button {
+  font-size: 2rem;
+  background-color: #4292EE;
+  color: white;
+  border-radius: 10px;
+  padding: 5px;
+  border: #4292EE;
 }
 
 /*# sourceMappingURL=style.css.map */

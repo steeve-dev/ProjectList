@@ -5,6 +5,8 @@ namespace App\Form;
 use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -18,9 +20,14 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('username')
-            ->add('email')
+            ->add('username', TextType::class, [
+                'label' => 'Identifiant : '
+            ])
+            ->add('email', EmailType::class, [
+                'label' => 'Email : '
+            ])
             ->add('agreeTerms', CheckboxType::class, [
+                'label' => 'J\'ai lu les conditions',
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
@@ -31,11 +38,12 @@ class RegistrationFormType extends AbstractType
             ->add('plainPassword', PasswordType::class, [
                 // instead of being set onto the object directly,
                 // this is read and encoded in the controller
+                'label' => 'Mot de passe : ',
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Entrez un mot de passe',
                     ]),
                     new Length([
                         'min' => 6,
@@ -46,6 +54,7 @@ class RegistrationFormType extends AbstractType
                 ],
             ])
             ->add('theme', ChoiceType::class, [
+                'label' => 'Thèmes : ',
                 'choices'=>[
                     'defaut'=>'default',
                     'bureau'=>'desk',

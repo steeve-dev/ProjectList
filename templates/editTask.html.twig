@@ -2,13 +2,28 @@
 
 {% block body %}
 
-    {{ form_start(taskForm) }}
-    {{ form_row(taskForm.name) }}
-    {{ form_row(taskForm.status) }}
+    <section
+            class="editTask-section">
+
+        <div
+                class="editTask-form">
+
+            {{ form_start(taskForm) }}
+            {{ form_row(taskForm.name) }}
+            {{ form_row(taskForm.status) }}
 
 
-    <button type="submit">valider</button>
-    {{ form_end(taskForm) }}
+            <button
+                    type="submit"
+                    class="edit-button">valider</button>
+            {{ form_end(taskForm) }}
+
+
+        </div>
+
+
+    </section>
+
 
 {% endblock %}
 

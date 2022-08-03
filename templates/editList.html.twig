@@ -1,23 +1,37 @@
 {% extends 'base.html.twig' %}
 {% block body %}
-    <a href="{{ path('ListPage') }}">retour aux listes</a>
+    <a href="{{ path('ListPage') }}"
+        class="back-link"
+    >retour aux listes</a>
+
+<section
+    class="editList-section">
 
 
-<h1>{{ list.name }}</h1>
-    {{ form_start(form) }}
-    {{ form_row(form) }}
-    <button>valider</button>
-    {{ form_end(form) }}
-<ul>
-    {% for taskList in list.tasks %}
+    <div
+            class="editList-title">
+        <h1>
+            {{ list.name }}</h1>
+        {{ form_start(form) }}
+        {{ form_row(form) }}
+        <button
+        class="edit-button">valider</button>
+        {{ form_end(form) }}
+        <ul>
+            {% for taskList in list.tasks %}
 
-        <li>
-            {{ taskList.name }}
-        </li>
+                <li>
+                    {{ taskList.name }}
+                </li>
 
-    {% endfor %}
+            {% endfor %}
 
-</ul>
+        </ul>
+    </div>
+
+
+
+</section>
 
 
 

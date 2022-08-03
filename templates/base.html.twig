@@ -31,14 +31,20 @@
             <ul
             class="header-nav-ul">
                 {% if app.user %}
-                    <li>Bonjour <a href="{{ path('accountPage', {'id': app.user.id}) }}">{{ app.user.username }}</a></li>
-                    <li><a href="{{ path('ListPage') }}">Gestion de listes</a></li>
+                    <li>Bonjour <a
+                                href="{{ path('accountPage', {'id': app.user.id}) }}"
+                                class="base-menu-a">{{ app.user.username }}</a></li>
+                    <li><a href="{{ path('ListPage') }}"
+                           class="base-menu-a">Gestion de listes</a></li>
                     <li>
-                        <a href="{{ path('app_logout') }}">Deconnexion</a></li>
+                        <a href="{{ path('app_logout') }}"
+                           class="base-menu-a">Deconnexion</a></li>
                 {% else %}
                     <li>
-                    <a href="{{ path('app_register') }}">Inscription</a></li>
-                    <a href="{{ path('app_login') }}">Connexion</a>
+                    <a href="{{ path('app_register') }}"
+                       class="base-menu-a">Inscription</a></li>
+                    <a href="{{ path('app_login') }}"
+                       class="base-menu-a">Connexion</a>
                 {% endif %}
             </ul>
         </nav>
