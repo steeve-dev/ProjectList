@@ -1,18 +1,11 @@
 .main-connection
-  background-color: $color2
-  display: flex
-  margin: auto
-  margin-top: 15vh
-  width: 40vw
-  border-radius: 20px
-  padding: 10px
-  box-shadow: 5px 5px 15px gray
+  @include userAuth
 
 
 .main-connection-button, .main-connection-title, .main-connection-password, .main-connection-username
   display: flex
   justify-content: center
-  font-family: "Segoe UI"
+
 
 .login-form
   margin: auto
@@ -25,12 +18,8 @@
   font-size: 1.5rem
 
 .login-button
-  font-size: 2rem
-  background-color: $color1
-  color: white
-  border-radius: 10px
-  padding: 5px
-  border: $color1
+  @include button
+
 .form-control
   font-size: 2rem
   width: 40%
