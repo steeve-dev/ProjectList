@@ -10,7 +10,11 @@
             <h1>Mon compte</h1>
 
             {{ form_start(form) }}
-            {{ form_row(form) }}
+            {{ form_row(form.username) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.plainPassword) }}
+            {{ form_row(form.theme) }}
+            {{ form_row(form.agreeTerms) }}
             <button
                     class="account-form-button">Modifier</button>
             {{ form_end(form) }}

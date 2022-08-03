@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\UserList;
 use App\Form\NewListType;
 use App\Repository\UserListRepository;
+use App\Services\ListService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -22,6 +23,7 @@ class ListController extends AbstractController
         $form = $this->createForm(NewListType::class, $list);
 
         $form->handleRequest($request);
+
 
         // get the list of the current user
 

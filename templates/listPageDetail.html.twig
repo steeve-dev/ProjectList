@@ -6,12 +6,14 @@
 
     <h2
             class="body-list-title title-list-detail">{{ tasks.name }}</h2>
+    <div
+    class="list-progression">{{ progression }}% accompli</div>
     <ul
             class="body-list-ul">
         {% for task in tasks.tasks %}
             <li
                     class="main-list-li">
-                {{ task.name }} ( {{ task.status }} )
+                {{ task.name }} ({{ task.status }})
                 <a href="{{ path('taskRemove', {'id': task.id}) }}">
                     <img
                             src="{{ asset('/picture/deleteIcon.PNG') }}"
@@ -28,9 +30,10 @@
         {% endfor %}
     </ul>
     <section
-            class="body-list-form">
+            class="body-list-form2">
         {{ form_start(taskForm) }}
-        {{ form_row(taskForm) }}
+        {{ form_row(taskForm.name) }}
+        {{ form_row(taskForm.status) }}
 
         <button type="submit"
                 class="list-task-button"

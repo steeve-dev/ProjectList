@@ -9,6 +9,7 @@ use App\Form\NewListType;
 use App\Form\NewTaskType;
 use App\Repository\UserListRepository;
 use App\Repository\UserRepository;
+use App\Services\ListService;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -59,6 +60,10 @@ class ListDetailController extends AbstractController
 
         $taskDisplay = $userListRepository->findBy(['id'=>$id])[0];
 
+        $listService = new ListService();
+        $progression = $listService->progression($taskDisplay);
+
+
         if ($taskForm->isSubmitted() && $taskForm->isValid()) {
 
 
@@ -77,7 +82,8 @@ class ListDetailController extends AbstractController
             'lists'=>$userList,
             'listForm'=>$form->createView(),
             'taskForm'=>$taskForm->createView(),
-            'tasks'=>$taskDisplay
+            'tasks'=>$taskDisplay,
+            'progression'=>$progression
         ]);
 
 
