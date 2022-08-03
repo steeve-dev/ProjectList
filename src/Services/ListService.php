@@ -21,9 +21,13 @@ class ListService
             }
         }
 
+        if ($taskComplete == 0)
+        {
+            $percent = 0;
+            return $percent;
+        }
+
         $percent = ($taskComplete/(2*$tasks->count()))*100;
-
-
 
         return $percent;
 
